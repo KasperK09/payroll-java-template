@@ -25,8 +25,18 @@ public class App {
     System.out.println("hours: " + numberOfHoursWorked);
     System.out.println("Rate: " + hourlyRate);
     System.out.println("Overtime: " )
-    System.out.println("Gross: " + (hourlyRate * numberOfHoursWorked) + "\n"); 
+    System.out.println("Gross: " calculatedGrossPay + "\n"); //need to add this class
 
     
+  }
+}
+
+public double calculateGrossPay{
+  double hourlyRate, overtimeRate, hours;
+  
+  if (hours <= 40) {
+    return hours * hourlyRate;
+  } else if (hours > 40) {
+    return hours * 40 + ((hours - 40) * (hourlyRate * overtimeRate));
   }
 }
