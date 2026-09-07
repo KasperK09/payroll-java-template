@@ -56,7 +56,7 @@ public class App {
     if (numberOfHoursWorked <= 40) {
       return numberOfHoursWorked * hourlyRate;
     } else {
-      return ((numberOfHoursWorked * 40) * hourlyRate) + ((numberOfHoursWorked - 40) * (hourlyRate * overtimeRate));
+      return (40 * hourlyRate) + ((numberOfHoursWorked - 40) * (hourlyRate * overtimeRate));
     }
   }
 
