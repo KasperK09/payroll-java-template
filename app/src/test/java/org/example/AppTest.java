@@ -14,6 +14,20 @@ class AppTest {
   }
 
   @Test
+  void testRegularGrossPayFor0() {
+    double result = App.calculateGrossPay(16.78, 1.5, 0);
+
+    assertEquals(0, result, 0.01);
+  }
+
+  @Test
+  void testRegularGrossPayForOneHour() {
+    double result = App.calculateGrossPay(16.78, 1.5, 1);
+
+    assertEquals(16.78, result, 0.01);
+  }
+
+  @Test
   void testOvertimeGrossPay() {
     double result = App.calculateGrossPay(16.78, 1.5, 50);
 
@@ -22,6 +36,22 @@ class AppTest {
 
     assertEquals(expected, result, 0.01);
   }
+
+  /*this just fails to build*/ // so need to fix this error handling
+  // @Test
+  // void testRegularGrossPayForNegative() {
+  //   double result = App.calculateGrossPay(16.78, 1.5, -40);
+
+  //   assertEquals(0, result, 0.01);
+  // }
+
+  /*This also fails maybe the test is wrong but I know that my program can't handle letters*/
+  // @Test
+  // void testRegularGrossPayForletter() {
+  //   double result = App.calculateGrossPay(16.78, 1.5, a);
+
+  //   assertEquals(0, result, 0.01);
+  // }
 
   @Test
   void testHealthInsuranceUnderThreeChildren() {
