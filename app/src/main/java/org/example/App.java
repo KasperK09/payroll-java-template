@@ -11,7 +11,6 @@ public class App {
     double FederalIncomeTax = 0.14;
     double StateIncomeTax = 0.05;
     double UnionDues = 10.00;
-    double HealthInsurance;
 
     System.out.println("Welcome to the Payroll Program!");
     System.out.println("How many hours did you work this week?");
@@ -31,23 +30,27 @@ public class App {
 
     System.out.println("PayRoll Stub:\n");
 
-    System.out.println("hours: " + numberOfHoursWorked);
+    System.out.println("Hours: " + numberOfHoursWorked);
     System.out.println("Rate: " + hourlyRate);
-    System.out.println("Gross: " + GrossPayCalculated); //need to add this class
+    System.out.println("Gross: $" + GrossPayCalculated);
 
-    System.out.println("Taxes:\n");
+    System.out.println("\nTaxes:\n");
 
-    System.out.println("Social Securuty Tax: " + SocialSecuityTax);
-    System.out.println("Federal Income Tax: " + FederalIncomeTax);
-    System.out.println("State Income Tax" + StateIncomeTax);
+    System.out.println("Social Securuty Tax: " + (SocialSecuityTax * GrossPayCalculated));
+    System.out.println("Federal Income Tax: " + (FederalIncomeTax * GrossPayCalculated));
+    System.out.println("State Income Tax: " + (StateIncomeTax * GrossPayCalculated));
 
-    System.out.println("Other Payments:\n");
+    System.out.println("\nOther Payments:\n");
 
-    System.out.println("Union dues:" + StateIncomeTax);
-    System.out.println("Health Insurance:" + StateIncomeTax);
+    System.out.println("Union dues: $" + UnionDues);
+    System.out.println("Health Insurance: $" + HealthInsuranceCalculated);
 
+    System.out.println("\nNet Pay: " + ((GrossPayCalculated) - ((SocialSecuityTax * GrossPayCalculated) + (FederalIncomeTax * GrossPayCalculated) + (StateIncomeTax * GrossPayCalculated) + UnionDues + HealthInsuranceCalculated)));
+
+     System.out.println("\nThank you for using the payroll program!\n");
   }
 
+  //these need to be static or it complains
   public static double calculateGrossPay(double hourlyRate, double overtimeRate,double numberOfHoursWorked){
   
     if (numberOfHoursWorked <= 40) {
