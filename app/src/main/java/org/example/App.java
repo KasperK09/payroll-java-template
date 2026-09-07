@@ -18,25 +18,26 @@ public class App {
 
     int numberOfChildren = scanner.nextInt();
 
+    double GrossPayCalculated = calculateGrossPay(hourlyRate, overtimeRate, numberOfHoursWorked);
+
     scanner.close();
 
     System.out.println("PayRoll Stub:\n");
 
     System.out.println("hours: " + numberOfHoursWorked);
     System.out.println("Rate: " + hourlyRate);
-    System.out.println("Overtime: " )
-    System.out.println("Gross: " calculatedGrossPay + "\n"); //need to add this class
+    System.out.println("Overtime: " );
+    System.out.println("Gross: " + GrossPayCalculated + "\n"); //need to add this class
 
     
   }
 }
 
-public double calculateGrossPay{
-  double hourlyRate, overtimeRate, hours;
+public static double calculateGrossPay(double hourlyRate, double overtimeRate,double numberOfHoursWorked){
   
-  if (hours <= 40) {
-    return hours * hourlyRate;
-  } else if (hours > 40) {
-    return hours * 40 + ((hours - 40) * (hourlyRate * overtimeRate));
+  if (numberOfHoursWorked <= 40) {
+    return numberOfHoursWorked * hourlyRate;
+  } else {
+    return ((numberOfHoursWorked * 40) * hourlyRate) + ((numberOfHoursWorked - 40) * (hourlyRate * overtimeRate));
   }
 }
